@@ -1,0 +1,15 @@
+Attributes fur the service implementation:
+[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+
+[WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "DoWork")]
+
+Web.config:
+[LESS-THAN]?xml version="1.0"?[GREATER-THAN]
+[LESS-THAN]configuration[GREATER-THAN]
+[LESS-THAN]system.web[GREATER-THAN] [LESS-THAN]authorization[GREATER-THAN] [LESS-THAN]deny users="?"/[GREATER-THAN] [LESS-THAN]/authorization[GREATER-THAN] [LESS-THAN]compilation debug="true" targetFramework="4.0"/[GREATER-THAN] [LESS-THAN]httpRuntime/[GREATER-THAN]
+[LESS-THAN]/system.web[GREATER-THAN]
+[LESS-THAN]system.serviceModel[GREATER-THAN] [LESS-THAN]services[GREATER-THAN] [LESS-THAN]service name="WebApplication5.Service.Service1"[GREATER-THAN] [LESS-THAN]endpoint address="" binding="webHttpBinding" contract="WebApplication5.Service.IService1" bindingConfiguration="ApiQuotaBinding" behaviorConfiguration="webHttpBehavior"/[GREATER-THAN] [LESS-THAN]/service[GREATER-THAN] [LESS-THAN]/services[GREATER-THAN] [LESS-THAN]bindings[GREATER-THAN] [LESS-THAN]!-- Customizations for REST service --[GREATER-THAN] [LESS-THAN]webHttpBinding[GREATER-THAN] [LESS-THAN]!-- Limits set to 10 MB (specified value in bytes) --[GREATER-THAN] [LESS-THAN]binding name="ApiQuotaBinding" maxReceivedMessageSize="1048576000" maxBufferPoolSize="1048576000" maxBufferSize="1048576000" closeTimeout="00:03:00" openTimeout="00:03:00" receiveTimeout="00:10:00" sendTimeout="00:03:00"[GREATER-THAN] [LESS-THAN]readerQuotas maxDepth="32" maxStringContentLength="104857600" maxArrayLength="1048576000" maxBytesPerRead="1048576000" /[GREATER-THAN] [LESS-THAN]security mode="None" /[GREATER-THAN] [LESS-THAN]/binding[GREATER-THAN] [LESS-THAN]/webHttpBinding[GREATER-THAN] [LESS-THAN]/bindings[GREATER-THAN] [LESS-THAN]behaviors[GREATER-THAN] [LESS-THAN]endpointBehaviors[GREATER-THAN] [LESS-THAN]behavior name="webHttpBehavior"[GREATER-THAN] [LESS-THAN]webHttp /[GREATER-THAN] [LESS-THAN]/behavior[GREATER-THAN] [LESS-THAN]/endpointBehaviors[GREATER-THAN] [LESS-THAN]/behaviors[GREATER-THAN]
+[LESS-THAN]/system.serviceModel[GREATER-THAN]
+[LESS-THAN]startup[GREATER-THAN] [LESS-THAN]supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/[GREATER-THAN]
+[LESS-THAN]/startup[GREATER-THAN]
+[LESS-THAN]/configuration[GREATER-THAN]
